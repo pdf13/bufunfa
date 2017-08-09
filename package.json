@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/pdf13/bufunfa#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "slackbots": "^1.0.2"
   },
