@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
+    "start-dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/pdf13/bufunfa/issues"
   },
-  "homepage": "https://github.com/pdf13/bufunfa#readme"
+  "homepage": "https://github.com/pdf13/bufunfa#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "slackbots": "^1.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
