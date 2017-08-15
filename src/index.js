@@ -1,4 +1,4 @@
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const express = require('express');
 
 const sentry = require('./sentry');
@@ -17,4 +17,4 @@ app.post('/circleci', circleci);
 
 app.listen(port, () => {
     console.log(`Bunfunfa listening on port ${port}`);
-})
+});
