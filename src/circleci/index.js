@@ -10,8 +10,6 @@ function sentryController(req, res, next) {
     const pullRequests = formatPullRequests(data.pull_requests);
     const timestamp = generateTimestamp(data.stop_time);
 
-    if(!channel) return next();
-
     const params = {
         icon_url: 'http://ilarge.lisimg.com/image/1334778/740full-my-profile.jpg',
         attachments: [
@@ -33,7 +31,8 @@ function sentryController(req, res, next) {
         ]
     };
 
-    bot.postMessageToChannel(channel, message, params);
+    if(!channel) { bot.postMessageToChannel(channel, message, params); }
+
     res.send();
     next();
 }

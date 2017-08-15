@@ -6,6 +6,7 @@ function sentryController(req, res, next) {
     const channel = projectChannels[data.project];
     const message = '';
     const color = data.level === 'error' ? '#f72600' : '#E8E8E8';
+
     const params = {
         icon_url: 'http://www.emoticonswallpapers.com/avatar/movies/The-Terminator.jpg',
         attachments: [
@@ -24,7 +25,8 @@ function sentryController(req, res, next) {
         ]
     };
 
-    bot.postMessageToChannel(channel, message, params);
+    if(channel) { bot.postMessageToChannel(channel, message, params); }
+
     res.send();
     next();
 }
