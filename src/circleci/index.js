@@ -1,7 +1,7 @@
 const bot = require('./circleci-slackbot');
 const projectChannels = require('./project-channels');
 
-function sentryController(req, res, next) {
+function circleCIController(req, res, next) {
     const data = req.body.payload;
     const channel = projectChannels[data.reponame];
     const colors = { success: 'good', failed: 'danger', canceled: '#464646' }
@@ -31,7 +31,7 @@ function sentryController(req, res, next) {
         ]
     };
 
-    if(!channel) { bot.postMessageToChannel(channel, message, params); }
+    if(channel) { bot.postMessageToChannel(channel, message, params); }
 
     res.send();
     next();
@@ -48,4 +48,4 @@ function formatPullRequests(prs) {
     return urls.join('\n');
 }
 
-module.exports = sentryController;
+module.exports = circleCIController;
