@@ -25,7 +25,8 @@ function sentryController(req, res, next) {
     };
 
     bot.postMessageToChannel(channel, message, params);
-    res.send(req.body);
+    res.send();
+    next();
 }
 
 module.exports = sentryController;
